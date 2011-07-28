@@ -143,7 +143,7 @@ module ActiveMerchant #:nodoc:
       end
 
       def validate_card_type #:nodoc:
-        errors.add :type, "is required" if type.blank? && number.present?
+        errors.add :type, "is required" if type.blank?
         errors.add :type, "is invalid"  unless type.blank? || CreditCard.card_companies.keys.include?(type)
       end
 
